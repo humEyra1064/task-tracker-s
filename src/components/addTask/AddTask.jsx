@@ -12,6 +12,8 @@ const AddTask = () => {
         e.preventDefault();
         const newTask ={task,date}
         addNewTask(newTask)
+        setTask("")
+        setDate("")
     }
     const addNewTask =async(newTask)=>{
         const url ="https://63f7293fe40e087c9588886d.mockapi.io/api/tasks";
