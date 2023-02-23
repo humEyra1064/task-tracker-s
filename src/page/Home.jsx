@@ -7,6 +7,7 @@ import TaskList from '../components/taskList/TaskList'
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [text, setText] = useState("Show Task Bar")
+   const [task, setTask] = useState([])
     const url ="https://63f7293fe40e087c9588886d.mockapi.io/api/tasks";
 
     const toggle =()=>{
@@ -17,7 +18,7 @@ const Home = () => {
     const getTask =async()=>{
 const {data} = await axios(url)
 
-
+     setTask(data)
     }
 
     useEffect(() => {
@@ -29,8 +30,9 @@ const {data} = await axios(url)
   return (
     <div className='mt-4 d-flex justify-content-center flex-column'>
         <Button variant="primary" onClick={()=>{toggle()}}>{text}</Button>
-      <AddTask/>
-      <TaskList/>
+        {isOpen && <AddTask getTask={getTask}/> }
+      
+      <TaskList task ={task} getTask={getTask} />
     </div>
   )
 }

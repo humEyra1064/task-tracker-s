@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 
-const AddTask = () => {
+const AddTask = ({getTask}) => {
     const [task, setTask] = useState("")
     const [date, setDate] = useState("")
 
@@ -20,8 +20,10 @@ const AddTask = () => {
         try {
            await axios.post(url,newTask) 
         } catch (error) {
-            
+         
+  
         }
+        getTask()
     }
   return (
     <div>
