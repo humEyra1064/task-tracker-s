@@ -28,7 +28,7 @@ const {data} = await axios(url)
     }, [])
     
   return (
-    <div className='mt-4 d-flex justify-content-center flex-column'>
+    <div className='mt-4 d-flex justify-content-center flex-column '>
         <Button variant="primary" onClick={()=>{toggle()}}>{text}</Button>
         {isOpen && <AddTask getTask={getTask}/> }
       
