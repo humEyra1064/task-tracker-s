@@ -1,13 +1,14 @@
 
 import './App.css';
-import Header from './components/header/Header';
-import Home from './page/Home';
+import Headerr from './components/header/Headerr';
+import Homee from './page/Homee';
+
 
 function App() {
   return (
-    <div className="container mt-5">
-     <Header/>
-     <Home/>
+    <div className="container">
+    <Headerr/>
+    <Homee/>
     </div>
   );
 }
