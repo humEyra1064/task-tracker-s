@@ -2,6 +2,11 @@
 import axios from "axios";
 import { RiDeleteBack2Fill } from "react-icons/ri";
 const TaskList = ({ task, getTask }) => {
+  const deleteTask=async(id)=>{
+    const url ="https://63f7293fe40e087c9588886d.mockapi.io/api/tasks"
+    await axios.delete(`${url}/${id}`)
+getTask()
+  }
   return (
     <div>
       {task.map((item) => {
@@ -16,6 +21,7 @@ const TaskList = ({ task, getTask }) => {
               <p>{date}</p>
             </div>
             <RiDeleteBack2Fill
+            onClick={()=>deleteTask(id)}
               style={{
                 cursor: "pointer",
                 marginRight: "20px",
