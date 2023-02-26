@@ -1,13 +1,33 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-image: url(https://cdn.pixabay.com/photo/2022/10/01/15/51/gartenbank-7491775_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.home{
+  margin-top: 3rem;
+  width: 50%;
+  background-color:#595952;
+  border-radius: 10px;
+ 
+ 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header{
+  background-color: #A64F03;
+
+ margin-top: 20px;
 }
+
+/* Color Theme Swatches in Hex */
+.GETTING-LOST-V-1-hex { color: #D8D9D7; }
+.GETTING-LOST-V-2-hex { color: #595952; }
+.GETTING-LOST-V-3-hex { color: #D9831A; }
+.GETTING-LOST-V-4-hex { color: #A64F03; }
+.GETTING-LOST-V-5-hex { color: #F24405; }
+
+

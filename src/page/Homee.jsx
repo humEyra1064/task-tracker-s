@@ -29,9 +29,9 @@ const Homee = () => {
   
   return (
     <div className="mt-4 d-flex justify-content-center flex-column">
-      <Button 
-      variant="danger "
-      onClick={()=>{toggle()}}
+      <Button className="bg-success"
+    variant="success"
+     onClick={()=>{toggle()}}
       >{text}</Button>
       {isOpen && <AddTaskk task={task} getTask={getTask}/>}
       

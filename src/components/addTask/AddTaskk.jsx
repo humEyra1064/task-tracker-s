@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import axios from "axios"
 
-function AddTask() {
+function AddTask({getTask}) {
   const [task, setTask] = useState("")
   const [date, setDate] = useState("")
 
@@ -12,11 +12,14 @@ function AddTask() {
    e.preventDefault()
    const newTask ={task,date}
    addNewTask(newTask)
+   setTask("")
+   setDate("")
   }
 
   const addNewTask=async(newTask)=>{
     const url ="https://63f7293fe40e087c9588886d.mockapi.io/api/tasks";
 await axios.post(url,newTask)
+getTask()
   }
   return (
     <Form onSubmit={handleSubmit}>
@@ -30,7 +33,7 @@ await axios.post(url,newTask)
         <Form.Control type="date" placeholder="" value={date} onChange={(e)=>setDate(e.target.value)} />
       </Form.Group>
       <div className="text-center ">
-        <Button variant="primary w-50" type="submit">
+        <Button variant="success w-50" type="submit">
           Submit
         </Button>
       </div>
